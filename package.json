@@ -1,13 +1,12 @@
 {
   "name": "server",
   "version": "1.0.0",
-  "main": "app.js",
+  "main": "src/app.js",
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "node src/app.js -e js,jsx,ts,tsx",
     "build": "echo \"No build step defined\"",
-    "vercel-build": "echo \"No build step for this Express app\"",
     "start": "node src/app.js"
   },
   "keywords": [],
