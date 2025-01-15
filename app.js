@@ -1,8 +1,8 @@
 import express from "express";
 import mongoose from "mongoose"
-import apiRoute, { protectedRoute } from "./routes/api.js";
+import apiRoute, { protectedRoute } from "./src/routes/api.js";
 // import { DB_CONNECT } from "./utils/constants.js";
-import AuthMiddleware from "./middlewares/AuthMiddleware.js";
+import AuthMiddleware from "./src/middlewares/AuthMiddleware.js";
 import cors from 'cors'
 import dotenv from 'dotenv';
 dotenv.config();
