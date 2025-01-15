@@ -21,7 +21,6 @@ mongoose.connect(process.env.DB_CONNECT).then(() => console.log("Connected to Mo
 // Basics Calls
 const corsOptions = {
     origin: 'http://localhost:5173', // Allow your frontend's origin
-    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'authorization'],
     credentials: true,
 };
