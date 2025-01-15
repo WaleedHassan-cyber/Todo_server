@@ -1,13 +1,12 @@
 {
   "name": "server",
   "version": "1.0.0",
-  "main": "src/app.js",
+  "main": "app.js",
   "type": "module",
   "scripts": {
+    "start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "node src/app.js -e js,jsx,ts,tsx",
-    "build": "echo \"No build step defined\"",
-    "start": "node src/app.js"
+    "dev": "node app.js -e js,jsx,ts,tsx"
   },
   "keywords": [],
   "author": "",
