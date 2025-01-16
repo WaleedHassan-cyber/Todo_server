@@ -28,7 +28,7 @@ app.use(cors(corsOptions));
 app.options("*", cors(corsOptions));  // prelight error
 // app.use(cors())
 app.use(express.json())
-
+app.use(express.urlencoded({ extended: true }));
 // backend test Routes
 app.get("/",(req,res)=>{
     res.json({"message":"Chal raha ha bhai"})
