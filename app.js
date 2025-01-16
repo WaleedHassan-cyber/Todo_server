@@ -30,10 +30,10 @@ app.options("*", cors(corsOptions));  // prelight error
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }));
 // backend test Routes
-app.get("/",(req,res)=>{
-    res.json({"message":"Chal raha ha bhai"})
-})
 
+app.get("/",(req,res)=>{
+    res.send("Hello World")
+})
     
 // Main Routes
 app.use("/api",apiRoute);
