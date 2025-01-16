@@ -31,10 +31,10 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: true }));
 // backend test Routes
 
-app.get("/",(req,res)=>{
-    res.send("Hello World")
-})
-    
+app.use((req, res) => {
+    res.status(404).json({ message: "Route not found" });
+  });
+   
 // Main Routes
 app.use("/api",apiRoute);
 app.use("/api",AuthMiddleware,protectedRoute);
