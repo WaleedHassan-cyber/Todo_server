@@ -29,8 +29,8 @@ app.options("*", cors(corsOptions));  // prelight error
 // app.use(cors())
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }));
-// backend test Routes
 
+// backend test Routes
 app.get('/',(req, res) => {
     res.status(200).json({ message: "found" });
 });
