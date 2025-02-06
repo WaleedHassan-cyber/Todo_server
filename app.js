@@ -1,3 +1,4 @@
+import dotenv from 'dotenv';
 dotenv.config();
 import express from "express";
 import mongoose from "mongoose"
@@ -5,7 +6,6 @@ import apiRoute, { protectedRoute } from "./routes/api.js";
 // import { DB_CONNECT } from "./utils/constants.js";
 import AuthMiddleware from "./middlewares/AuthMiddleware.js";
 import cors from 'cors'
-import dotenv from 'dotenv';
 
 
 
