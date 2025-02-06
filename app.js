@@ -32,7 +32,7 @@ app.use(express.urlencoded({ extended: true }));
 // backend test Routes
 
 app.get('/',(req, res) => {
-    res.status(404).json({ message: "found" });
+    res.status(200).json({ message: "found" });
 });
    
 // Main Routes
