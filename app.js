@@ -20,7 +20,7 @@ mongoose.connect(process.env.DB_CONNECT).then(() => console.log("Connected to Mo
 
 // Basics Calls
 const corsOptions = {
-    origin: process.env.CLIENT_URL ||'http://localhost:5173', // Allow your frontend's origin
+    origin: process.env.CLIENT_URL ||'https://todo-client-dusky.vercel.app', // Allow your frontend's origin
     allowedHeaders: ['Content-Type', 'authorization'],
     credentials: true,
 };
