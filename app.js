@@ -9,7 +9,7 @@ import serverless from "serverless-http";
 
 const app = express();
 
-// MongoDB Connection
+// MongoDB Connectiona
 mongoose
   .connect(process.env.DB_CONNECT)
   .then(() => console.log("✅ Connected to MongoDB"))
