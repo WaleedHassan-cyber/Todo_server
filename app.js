@@ -36,9 +36,8 @@ app.use("/api", AuthMiddleware, protectedRoute);
 // ✅ Local dev
 if (process.env.NODE_ENV !== "production") {
   const PORT = process.env.PORT || 8000;
-  app.listen(PORT, () => console.log(`🚀 Server is running on ${PORT}`));
+  app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));
 }
 
-// ✅ Vercel (must be default export)
-export default app;
-export const handler = serverless(app);
+// ✅ Vercel export
+export default serverless(app);
