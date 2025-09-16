@@ -7,7 +7,7 @@ import { createTodo } from "../controllers/todo.controller.js";
 import { check } from "express-validator";
 import { GetTodos } from "../controllers/todolist.controller.js";
 import { Marktodo } from "../controllers/MarkTodo.controller.js";
-import { RemoveTodo } from "../controllers/removetodo.controllers.js";
+import { RemoveTodo } from "../controllers/removetodo.controller.js";
 
 
 const apiRoute= express.Router();
