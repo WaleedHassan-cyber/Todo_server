@@ -30,7 +30,11 @@ app.get("/", (req, res) => {
 app.use("/api", apiRoute);
 app.use("/api", AuthMiddleware, protectedRoute);
 
-
+// ✅ Local dev
+if (process.env.NODE_ENV !== "production") {
+  const PORT = process.env.PORT || 8000;
+  app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));
+}
 
 // ✅ Vercel export
 export default serverless(app);

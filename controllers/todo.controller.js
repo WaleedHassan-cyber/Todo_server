@@ -4,7 +4,7 @@ import { StatusCode } from "../utils/constants.js";
 import todoModel from "../models/Todo.js";
 import userModel from "../models/userSchema.js";
 
-export const createTodo = async (req, res) => {
+export const  createTodo = async (req, res) => {
   const error = validationResult(req);
   if (!error.isEmpty()) {
     return res.json(
