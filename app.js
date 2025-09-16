@@ -10,10 +10,8 @@ import serverless from "serverless-http";
 const app = express();
 
 // MongoDB Connectiona
-mongoose
-  .connect(process.env.DB_CONNECT)
-  .then(() => console.log("✅ Connected to MongoDB"))
-  .catch((error) => console.error("❌ MongoDB connection error:", error));
+const connectDB = require("./db/connection.js");
+connectDB()
 
 // Middleware
 const corsOptions = {
