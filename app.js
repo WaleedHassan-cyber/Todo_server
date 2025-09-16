@@ -1,4 +1,4 @@
-import dotenv from 'dotenv';
+import dotenv from "dotenv";
 dotenv.config();
 import express from "express";
 import mongoose from "mongoose";
@@ -10,9 +10,10 @@ import serverless from "serverless-http";
 const app = express();
 
 // MongoDB Connection
-mongoose.connect(process.env.DB_CONNECT)
-  .then(() => console.log("Connected to MongoDB"))
-  .catch((error) => console.error("MongoDB connection error:", error));
+mongoose
+  .connect(process.env.DB_CONNECT)
+  .then(() => console.log("✅ Connected to MongoDB"))
+  .catch((error) => console.error("❌ MongoDB connection error:", error));
 
 // Middleware
 const corsOptions = {
@@ -32,11 +33,12 @@ app.get("/", (req, res) => {
 app.use("/api", apiRoute);
 app.use("/api", AuthMiddleware, protectedRoute);
 
-// ✅ Serverless export for Vercel
-export const handler = serverless(app);
-
 // ✅ Local dev
 if (process.env.NODE_ENV !== "production") {
   const PORT = process.env.PORT || 8000;
-  app.listen(PORT, () => console.log(`Server is Running on ${PORT}`));
+  app.listen(PORT, () => console.log(`🚀 Server is running on ${PORT}`));
 }
+
+// ✅ Vercel (must be default export)
+export default app;
+export const handler = serverless(app);
