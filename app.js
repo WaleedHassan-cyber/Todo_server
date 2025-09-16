@@ -1,7 +1,6 @@
 import dotenv from "dotenv";
 dotenv.config();
 import express from "express";
-import mongoose from "mongoose";
 import apiRoute, { protectedRoute } from "./routes/api.js";
 import AuthMiddleware from "./middlewares/AuthMiddleware.js";
 import cors from "cors";
@@ -31,11 +30,7 @@ app.get("/", (req, res) => {
 app.use("/api", apiRoute);
 app.use("/api", AuthMiddleware, protectedRoute);
 
-// ✅ Local dev
-if (process.env.NODE_ENV !== "production") {
-  const PORT = process.env.PORT || 8000;
-  app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));
-}
+
 
 // ✅ Vercel export
 export default serverless(app);
