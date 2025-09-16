@@ -6,6 +6,7 @@ import apiRoute, { protectedRoute } from "./routes/api.js";
 // import { DB_CONNECT } from "./utils/constants.js";
 import AuthMiddleware from "./middlewares/AuthMiddleware.js";
 import cors from 'cors'
+import serverless from "serverless-http";
 
 
 
@@ -39,5 +40,4 @@ app.get('/',(req, res) => {
 app.use("/api",apiRoute);
 app.use("/api",AuthMiddleware,protectedRoute);
 
-
-app.listen(PORT,()=> console.log("Server is Running"))
+export const handler = serverless(app);
